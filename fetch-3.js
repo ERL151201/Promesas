@@ -6,7 +6,7 @@ let usuario = {
     edad: 20
 };
 
-fetch('https://reqres.in/api/users', {
+fetch('https://reqres.in/api/', {
         method: 'POST', //PUT
         body: JSON.stringify(usuario), //data
         headers: {
@@ -16,4 +16,7 @@ fetch('https://reqres.in/api/users', {
     })
     .then(resp => resp.json())
     .then(console.log)
-    .catch(console.error);
+    .catch(error => {
+        console.log('Error en la petición');
+        console.log(error);
+    });
